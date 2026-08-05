@@ -1,0 +1,156 @@
+generated: '2026-08-04'
+method: probed
+source: https://oxa.tech/
+host: https://oxa.tech
+summary: >-
+  No /.well-known/ discovery document is published. oxa.tech is a Nuxt-rendered
+  marketing site that returns a true 404 (text/html) for every unknown path — there
+  is no catch-all 200/redirect on this host, so every miss below is a real miss and
+  not a false positive. No raw files were saved because no probe returned a document,
+  and no `WellKnown`, `SecurityTxt`, `APICatalog` or `AgentCard` pointer is wired in
+  apis.yml. Oxa markets an API — the products and technology pages both state that Oxa
+  Hub offers "an API for optional integration with existing logistics systems" — but
+  publishes no developer portal, no API reference and no machine-readable contract on
+  any public host.
+catch_all:
+  behavior: 'true 404 (no catch-all); unknown paths return HTTP 404 text/html'
+  note: >-
+    Because this host 404s honestly, a future 200 on any path below can be trusted
+    as a real document rather than an SPA shell.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+  found: false
+- path: /.well-known/openid-configuration
+  status: 404
+  found: false
+- path: /.well-known/oauth-authorization-server
+  status: 404
+  found: false
+- path: /.well-known/oauth-protected-resource
+  status: 404
+  found: false
+- path: /.well-known/api-catalog
+  status: 404
+  found: false
+- path: /.well-known/ai-plugin.json
+  status: 404
+  found: false
+- path: /.well-known/agent-card.json
+  status: 404
+  found: false
+- path: /.well-known/agent.json
+  status: 404
+  found: false
+- path: /.well-known/mcp.json
+  status: 404
+  found: false
+- path: /.well-known/apple-app-site-association
+  status: 404
+  found: false
+- path: /.well-known/dnt-policy.txt
+  status: 404
+  found: false
+contract_discovery:
+  performed: '2026-08-04'
+  result: no machine-readable contract published
+  hosts_probed:
+  - oxa.tech
+  - www.oxa.tech
+  subdomains_resolved: []
+  subdomains_tried:
+  - api.oxa.tech
+  - docs.oxa.tech
+  - dev.oxa.tech
+  - developer.oxa.tech
+  - developers.oxa.tech
+  - portal.oxa.tech
+  - app.oxa.tech
+  - hub.oxa.tech
+  - cloud.oxa.tech
+  - console.oxa.tech
+  - platform.oxa.tech
+  - status.oxa.tech
+  - trust.oxa.tech
+  - support.oxa.tech
+  - help.oxa.tech
+  - partners.oxa.tech
+  - partner.oxa.tech
+  - data.oxa.tech
+  - test.oxa.tech
+  - staging.oxa.tech
+  subdomain_note: >-
+    Not one candidate subdomain resolves in DNS. Certificate-transparency
+    enumeration via crt.sh was attempted and returned HTTP 404 (service
+    unavailable at probe time), so the subdomain list above is DNS-resolution
+    evidence only.
+  paths:
+  - {path: /llms.txt, status: 404, found: false}
+  - {path: /openapi.json, status: 404, found: false}
+  - {path: /openapi.yaml, status: 404, found: false}
+  - {path: /swagger.json, status: 404, found: false}
+  - {path: /v1/openapi.json, status: 404, found: false}
+  - {path: /api-docs, status: 404, found: false}
+  - {path: /docs, status: 404, found: false}
+  - {path: /redoc, status: 404, found: false}
+  - {path: /rapidoc, status: 404, found: false}
+  - {path: /api, status: 404, found: false}
+  - {path: /api/v1, status: 404, found: false}
+  - {path: /developers, status: 404, found: false}
+  - {path: /security, status: 404, found: false}
+  graphql:
+    endpoint: https://oxa.tech/graphql
+    get_status: 404
+    introspection_post_status: 404
+    found: false
+  mcp:
+    found: false
+    note: no MCP endpoint published or advertised on any Oxa host
+  a2a:
+    found: false
+    note: >-
+      Both /.well-known/agent-card.json and the pre-0.3 /.well-known/agent.json
+      returned 404. No agent card written — per pipeline policy an agent card is
+      search-only and is never authored on a provider's behalf.
+  robots:
+    url: https://oxa.tech/robots.txt
+    status: 200
+    policy: 'User-agent: * / Disallow: (nothing disallowed)'
+  sitemap:
+    url: https://oxa.tech/sitemap.xml
+    status: 200
+    url_count: 24
+    developer_pages: 0
+    note: >-
+      24 URLs, all marketing/news/legal. No developer, docs, API or reference page
+      appears anywhere in the sitemap.
+  github_org:
+    url: https://github.com/Oxbotica
+    status: 200
+    public_repos: 0
+    verified_first_party: false
+    note: >-
+      A GitHub organization named `Oxbotica` exists but carries no description, no
+      website and zero public repositories, so first-party ownership could not be
+      confirmed. No GitHubOrganization pointer was wired. There is no `oxa`
+      organization; github.com/oxa-dev is the unrelated Open Exchange Architecture
+      project.
+  registries:
+    npm: no first-party package found (searched "oxa", "oxbotica")
+    pypi: >-
+      no first-party package found; the `oxa` project on PyPI is unrelated
+      (author Franklin Koch). oxbotica, oxa-sdk and oxa-hub all 404.
+    maven: not found
+    nuget: not found
+  status_page:
+    found: false
+    note: status.oxa.tech does not resolve; no status page linked from the site
+  trust_center:
+    found: false
+    note: trust.oxa.tech does not resolve; probe-security-programs.py returned trust=none
+  vulnerability_disclosure:
+    found: false
+    note: >-
+      No security.txt, no bug bounty program (HackerOne/Bugcrowd/Intigriti) and no
+      disclosure page. The contact form does route a "Safety" department, but that is
+      vehicle safety, not coordinated vulnerability disclosure.

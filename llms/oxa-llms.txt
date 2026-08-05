@@ -1,0 +1,59 @@
+# Oxa
+
+> Oxa (formerly Oxbotica, rebranded in 2023) is a British autonomous vehicle software company founded in 2014 in Oxford, England by Paul Newman and Ingmar Posner. It sells Industrial Mobility Automation — self-driving software for industrial vehicles operating in ports, airports, manufacturing yards, solar farms and shuttle networks — under the banner it calls Universal Autonomy: the ability of any vehicle to operate autonomously in any place at any time.
+
+Oxa's product line has four parts. **Oxa Driver** is the autonomy stack that gives a vehicle full self-driving capability. **Oxa Foundry** (previously marketed as Oxa MetaDriver) is a generative-AI toolchain that virtually replicates and expands real-world driving scenarios to accelerate training and assurance. **Reference Autonomy Designs (RADs)** are modular hardware integration blueprints for retrofitting existing fleets. **Oxa Hub** is the cloud fleet-management suite, covering remote assist, task design, workspace mapping, digital twins, calibration and in-use monitoring for regulatory compliance.
+
+The company raised a $115M Series C in 2023 with participation from Google, and works with Ocado Group, ZF and bp. In 2021 it was the first autonomy company to have its safety case assessed by the BSI, and in 2022 it ran Europe's first zero-occupancy autonomous vehicle journey on public roads.
+
+## API surface
+
+Oxa **markets an API but does not publish one**. Both the products and technology pages state that Oxa Hub offers "an API for optional integration with existing logistics systems", yet as of 2026-08-04 there is **no public developer portal, no API reference, no SDK, no MCP server, no agent card and no machine-readable contract** on any Oxa host.
+
+Contract discovery probed oxa.tech and www.oxa.tech for `/openapi.json`, `/openapi.yaml`, `/swagger.json`, `/v1/openapi.json`, `/api-docs`, `/docs`, `/redoc`, `/rapidoc`, `/api`, `/api/v1`, `/developers`, `/graphql` (GET and an introspection POST), `/llms.txt`, and the full `/.well-known/` discovery surface including `security.txt`, `openid-configuration`, `oauth-authorization-server`, `oauth-protected-resource`, `api-catalog`, `ai-plugin.json`, `mcp.json`, `agent-card.json` and the pre-0.3 `agent.json`. Every one returned 404. Twenty candidate developer subdomains (api., docs., dev., developer., developers., portal., app., hub., cloud., console., platform., status., trust., support., help., partners., partner., data., test., staging.) fail to resolve in DNS. The 24-URL sitemap contains no developer page. No first-party package exists on npm, PyPI, Maven Central or NuGet.
+
+The only route to the Oxa Hub API is the contact form at https://oxa.tech/contact/, which routes to Sales. Integrators cannot evaluate the contract before that conversation.
+
+**What Oxa could publish** to make the Oxa Hub API discoverable and agent-usable: an OpenAPI description at a stable public URL, a public reference for the Oxa Hub endpoints (keys can stay behind the sales motion), an authentication page, a `/.well-known/security.txt`, and a status page for the Hub cloud services.
+
+## Site
+
+- [Home](https://oxa.tech/): Autonomous vehicle software for business — any vehicle, any environment, any purpose
+- [Products](https://oxa.tech/products/): Oxa Driver, Oxa Foundry, Reference Autonomy Designs, Oxa Hub
+- [Technology](https://oxa.tech/technology/): The ACE framework — Available, Configurable, Explainable
+- [Solutions](https://oxa.tech/solutions/): Industrial Mobility Automation by environment
+- [Safety](https://oxa.tech/safety/): Safety case and assurance approach, including the BSI assessment
+- [Customers](https://oxa.tech/customers/): Deployments and partners
+- [About](https://oxa.tech/about/): Company history, leadership and milestones
+- [News and Insights](https://oxa.tech/news-and-insights/): Company blog and press releases (no RSS/Atom feed published)
+- [Careers](https://oxa.tech/careers/): Open roles
+- [Contact](https://oxa.tech/contact/): Sales, Marketing, Press, Careers, Investor, Safety, Other
+
+## Legal
+
+- [Terms and Conditions](https://oxa.tech/terms-conditions/)
+- [Privacy Policy](https://oxa.tech/privacy-policy/)
+- [Cookie Policy](https://oxa.tech/cookie-policy/)
+
+## Contact
+
+- General: hello@oxa.tech
+- Phone: +44 (0)1865 433 998
+- Oxford (HQ): 8050 Alec Issigonis Way, Oxford Business Park North, Oxford, OX4 2HW, United Kingdom
+- Toronto: Suite 200, 1 Adelaide Street East, Toronto, ON M5C 2V9, Canada
+
+## Elsewhere
+
+- [LinkedIn](https://www.linkedin.com/company/oxauniversalautonomy)
+- [Forge Global secondary-market listing](https://forgeglobal.com/oxa_stock/)
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/oxa/refs/heads/main/apis.yml): APIs.json 0.20 provider profile
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/oxa/refs/heads/main/security/oxa-domain-security.yml): probed TLS/HSTS/DNSSEC/CAA/SPF/DMARC posture
+- [Well-known probe record](https://raw.githubusercontent.com/api-evangelist/oxa/refs/heads/main/well-known/oxa-well-known.yml): full contract-discovery evidence
+
+---
+generated: 2026-08-04
+method: generated
+source: apis.yml + probed https://oxa.tech/ (no provider-published /llms.txt; https://oxa.tech/llms.txt returned 404)

@@ -1,17 +1,39 @@
 aid: oxa
 name: Oxa
-description: 'Oxa is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Oxa (formerly Oxbotica, rebranded in 2023) is a British autonomous vehicle
+  software company founded in 2014 in Oxford, England by Paul Newman and Ingmar Posner.
+  Oxa builds what it calls Universal Autonomy — self-driving software configurable for
+  almost any vehicle in almost any environment — and sells it as Industrial Mobility
+  Automation for ports, airports, manufacturing yards, solar farms and shuttle networks.
+  Its product line is Oxa Driver (the autonomy stack), Oxa Foundry (a generative-AI training
+  and assurance toolchain, previously marketed as Oxa MetaDriver), Reference Autonomy
+  Designs (modular hardware integration blueprints), and Oxa Hub (a cloud fleet-management
+  suite covering remote assist, task design, workspace mapping, digital twins and in-use
+  monitoring). Oxa Hub is described on the marketing site as offering "an API for optional
+  integration with existing logistics systems", but Oxa publishes no developer portal,
+  no API reference and no machine-readable specification on any public host. The company
+  raised a $115M Series C in 2023 with participation from Google, and works with Ocado
+  Group, ZF and bp.'
+image: https://oxa.tech/_nuxt/image/012618.jpg
 url: https://raw.githubusercontent.com/api-evangelist/oxa/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pass
 specificationVersion: '0.20'
 created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
+- Autonomous Vehicles
+- Automotive
+- Robotics
+- Artificial Intelligence
+- Fleet Management
+- Logistics
+- Transportation
+- Industrial Automation
+- United Kingdom
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +41,53 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/oxa-domain-security.yml
 - type: Website
+  url: https://oxa.tech/
+- type: About
+  url: https://oxa.tech/about/
+- type: Products
+  url: https://oxa.tech/products/
+- type: Blog
+  url: https://oxa.tech/news-and-insights/
+- type: Contact
+  url: https://oxa.tech/contact/
+- type: TermsOfService
+  url: https://oxa.tech/terms-conditions/
+- type: PrivacyPolicy
+  url: https://oxa.tech/privacy-policy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/oxauniversalautonomy
+- type: Careers
+  url: https://oxa.tech/careers/
+- type: SecondaryMarket
   url: https://forgeglobal.com/oxa_stock/
+- type: LLMsTxt
+  url: llms/oxa-llms.txt
+x-enrichment:
+  date: '2026-08-04'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Oxa's products and technology pages both advertise that Oxa Hub ships "an API for
+    optional integration with existing logistics systems", but there is no developer
+    portal, no reference and no spec anywhere public — every developer path on oxa.tech
+    404s, not one developer subdomain resolves, and the only route to the API is the
+    Sales option on the contact form.
+  evidence:
+  - url: https://oxa.tech/products/
+    status: 200
+  - url: https://oxa.tech/developers
+    status: 404
+  - url: https://oxa.tech/openapi.json
+    status: 404
+  - url: https://oxa.tech/.well-known/agent-card.json
+    status: 404
+  - url: https://oxa.tech/contact/
+    status: 200
+  checked: '2026-08-04'
