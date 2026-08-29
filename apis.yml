@@ -14,6 +14,17 @@ description: 'Oxa (formerly Oxbotica, rebranded in 2023) is a British autonomous
   no API reference and no machine-readable specification on any public host. The company
   raised a $115M Series C in 2023 with participation from Google, and works with Ocado
   Group, ZF and bp.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://oxa.tech/_nuxt/image/012618.jpg
 url: https://raw.githubusercontent.com/api-evangelist/oxa/refs/heads/main/apis.yml
 x-type: company
